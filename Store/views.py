@@ -1,12 +1,86 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import JsonResponse
 import json
 import datetime
+
 
 from .models import *
 from .utils import cookieCart,cartData,guestOrder
 
 
+# after delete
+
+
+
+# from django.contrib.auth.forms import UserCreationForm
+
+# from django.contrib.auth import authenticate, login, logout
+
+# from django.contrib import messages
+
+# from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.models import Group
+
+# from .forms import  CreateUserForm
+# from .decorators import unauthenticated_user, allowed_users, admin_only
+
+# yha tk
+
+
+#  this part for user auth.................................
+# @unauthenticated_user
+# def registerPage(request):
+
+# 	form = CreateUserForm()
+# 	if request.method == 'POST':
+# 		form = CreateUserForm(request.POST)
+# 		if form.is_valid():
+# 			user = form.save()
+# 			username = form.cleaned_data.get('username')
+
+# 			group = Group.objects.get(name='customer')
+# 			user.groups.add(group)
+
+# 			messages.success(request, 'Account was created for ' + username)
+
+# 			return redirect('login')
+		
+
+# 	context = {'form':form}
+# 	return render(request, 'Store/register.html', context)
+
+# @unauthenticated_user
+# def loginPage(request):
+
+# 	if request.method == 'POST':
+# 		username = request.POST.get('username')
+# 		password =request.POST.get('password')
+
+# 		user = authenticate(request, username=username, password=password)
+
+# 		if user is not None:
+# 			login(request, user)
+# 			return redirect('store')
+# 		else:
+# 			messages.info(request, 'Username OR password is incorrect')
+
+# 	context = {}
+# 	return render(request, 'Store/login.html', context)
+
+# def logoutUser(request):
+# 	logout(request)
+# 	return redirect('login')
+
+# .............................................................................................................................................................................
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['customer'])
+# def main(request):
+#     home = addver.objects.all()
+#     return render(request, 'Store/main.html', {'home':home})
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['customer'])
 def store(request):
     data = cartData(request)
     cartItems =data['cartItems']
@@ -17,6 +91,9 @@ def store(request):
     context ={'products': products , 'cartItems':cartItems}
     return render(request, 'Store/store.html', context)
 
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['customer'])
 def cart(request):
     data = cartData(request)
     cartItems =data['cartItems']
@@ -28,6 +105,10 @@ def cart(request):
     context ={'items':items , 'order':order , 'cartItems':cartItems}
     return render(request, 'Store/cart.html', context)
 
+
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['customer'])
 def checkout(request):
     
     data = cartData(request)
@@ -39,6 +120,11 @@ def checkout(request):
     return render(request, 'Store/checkout.html', context)
 
 
+
+
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['customer'])
 def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']
@@ -71,6 +157,10 @@ def updateItem(request):
 # from django.views.decorators.csrf import csrf_exempt
 
 # @csrf_exempt
+
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['customer'])
 def processOrder(request):
     transaction_id = datetime.datetime.now().timestamp()
     data = json.loads(request.body)

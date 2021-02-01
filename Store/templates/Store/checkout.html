@@ -51,11 +51,11 @@
 			
 		</div>
 
-		<div class="col-lg-6">
+		<div class="col-lg-6" style="color: black;">
 			<div class="box-element">
 				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
 				<hr>
-				<h3>Order Summary</h3>
+				<h3 style="color: black;">Order Summary</h3>
 				<hr>
 				{% for item in items %}
 				<div class="cart-row">
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 
-	<script src="https://www.paypal.com/sdk/js?client-id=AejZrmztLKcoGTj4fHOy6VS5cYl5kjVw0OZiGjd8H8TOX5l0OcjfNZ6s4HysxIz4iSmgqjObUfuuLZLx&currency=INR"></script>
+	<script src="https://www.paypal.com/sdk/js?client-id=AdIAiLu_7EGAmLGdfClfN8ORdurzPnQcktuVLa6Rbfmm-uwnVI8vb9TuhLssASPnvu3gvu_Qg2xyIG8C&currency=INR"></script>
 
 	<script>
 		var total = '{{order.get_cart_total}}'

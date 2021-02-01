@@ -62,40 +62,643 @@
       console.log('cart:',cart)
 
     </script>
-</head>
-<body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'store' %}">Anchal Fashions</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'store' %}">Store </a>
-            </li>
-          </ul>
+<style type="text/css">
+
+body { color: green }
+.footer-widget p {
+    margin-bottom: 27px;
+}
+
+p{
+  color: black;
+}
+.sahu p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+  color:white;
+    line-height: 28px;
+}
+
+   .animate-border {
+  position: relative;
+  display: block;
+  width: 115px;
+  height: 3px;
+  background: #007bff; }
+
+.animate-border:after {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+  -webkit-animation: animborder 2s linear infinite;
+  animation: animborder 2s linear infinite; }
+
+@-webkit-keyframes animborder {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(113px);
+    transform: translateX(113px); } }
+
+@keyframes animborder {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(113px);
+    transform: translateX(113px); } }
+
+.animate-border.border-white:after {
+  border-color: #fff; }
+
+.animate-border.border-yellow:after {
+  border-color: #F5B02E; }
+
+.animate-border.border-orange:after {
+  border-right-color: #007bff;
+  border-left-color: #007bff; }
+
+.animate-border.border-ash:after {
+  border-right-color: #EEF0EF;
+  border-left-color: #EEF0EF; }
+
+.animate-border.border-offwhite:after {
+  border-right-color: #F7F9F8;
+  border-left-color: #F7F9F8; }
+
+/* Animated heading border */
+@keyframes primary-short {
+  0% {
+    width: 15%; }
+  50% {
+    width: 90%; }
+  100% {
+    width: 10%; } }
+
+@keyframes primary-long {
+  0% {
+    width: 80%; }
+  50% {
+    width: 0%; }
+  100% {
+    width: 80%; } } 
+
+.dk-footer {
+  padding: 75px 0 0;
+  background-color: #151414;
+  position: relative;
+  z-index: 2; }
+  .dk-footer .contact-us {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-left: 80px; }
+    .dk-footer .contact-us .contact-info {
+      margin-left: 50px; }
+    .dk-footer .contact-us.contact-us-last {
+      margin-left: -80px; }
+  .dk-footer .contact-icon i {
+    font-size: 24px;
+    top: -15px;
+    position: relative;
+    color:#007bff; }
+
+.dk-footer-box-info {
+  position: absolute;
+  top: 5px;
+  background: #202020;
+  padding: 40px;
+  z-index: 2; }
+  .dk-footer-box-info .footer-social-link h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 25px; }
+  .dk-footer-box-info .footer-social-link ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  .dk-footer-box-info .footer-social-link li {
+    display: inline-block; }
+  .dk-footer-box-info .footer-social-link a i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background: #000;
+    margin-right: 5px;
+    color: #fff; }
+    .dk-footer-box-info .footer-social-link a i.fa-facebook {
+      background-color: #3B5998; }
+    .dk-footer-box-info .footer-social-link a i.fa-twitter {
+      background-color: #55ACEE; }
+    .dk-footer-box-info .footer-social-link a i.fa-google-plus {
+      background-color: #DD4B39; }
+    .dk-footer-box-info .footer-social-link a i.fa-linkedin {
+      background-color: #0976B4; }
+    .dk-footer-box-info .footer-social-link a i.fa-instagram {
+      background-color: #B7242A; }
+
+.footer-awarad {
+  margin-top: 285px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .footer-awarad p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 20px;
+    padding-top: 15px; }
+
+.footer-info-text {
+  margin: 26px 0 32px; }
+
+.footer-left-widget {
+  padding-left: 80px; }
+
+.footer-widget .section-heading {
+  margin-bottom: 35px; }
+
+.footer-widget h3 {
+  font-size: 24px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 15px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content; }
+
+.footer-widget ul {
+  width: 50%;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.footer-widget li {
+  margin-bottom: 18px; }
+
+.footer-widget p {
+  margin-bottom: 27px; }
+
+.footer-widget a {
+  color: #878787;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .footer-widget a:hover {
+    color: #007bff; }
+
+.footer-widget:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.dk-footer-form {
+  position: relative; }
+  .dk-footer-form input[type=email] {
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: #2E2E2E;
+    border: 1px solid #2E2E2E; }
+  .dk-footer-form input::-webkit-input-placeholder, .dk-footer-form input::-moz-placeholder, .dk-footer-form input:-ms-input-placeholder, .dk-footer-form input::-ms-input-placeholder, .dk-footer-form input::-webkit-input-placeholder {
+    color: #878787;
+    font-size: 14px; }
+  .dk-footer-form input::-webkit-input-placeholder, .dk-footer-form input::-moz-placeholder, .dk-footer-form input:-ms-input-placeholder, .dk-footer-form input::-ms-input-placeholder, .dk-footer-form input::placeholder {
+    color: #878787;
+    font-size: 14px; }
+  .dk-footer-form button[type=submit] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 24px 12px 17px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #fff; }
+  .dk-footer-form button:hover {
+    cursor: pointer; }
+
+/* ==========================
+
+    Contact
+
+=============================*/
+.contact-us {
+  position: relative;
+  z-index: 2;
+  margin-top: 65px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.contact-icon {
+  position: absolute; }
+  .contact-icon i {
+    font-size: 36px;
+    top: -5px;
+    position: relative;
+    color: #007bff; }
+
+.contact-info {
+  margin-left: 75px;
+  color: #fff; }
+  .contact-info h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 0; }
+
+.copyright {
+  padding: 28px 0;
+  margin-top: 55px;
+  background-color: #202020; }
+  .copyright span,
+  .copyright a {
+    color: #878787;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+  .copyright a:hover {
+    color:#007bff; }
+
+.copyright-menu ul {
+  text-align: right;
+  margin: 0; }
+
+.copyright-menu li {
+  display: inline-block;
+  padding-left: 20px; }
+
+.back-to-top {
+  position: relative;
+  z-index: 2; }
+  .back-to-top .btn-dark {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2e2e2e;
+    border-color: #2e2e2e;
+    display: none;
+    z-index: 999;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+    .back-to-top .btn-dark:hover {
+      cursor: pointer;
+      background: #FA6742;
+      border-color: #FA6742; }
 
 
+      #third{
+     /* background: url("/static/images/background.jpg") 50% 0 no-repeat fixed; */
+     color: white;
+     background-color: #fff;
+     height: 650px;
+     padding: 0 0 0 0;   
+     
+     }
 
-        <div class="form-inline my-2 my-lg-0 d-flex akash" style="margin-left: 1170px;">
-            <a href="#"class="btn btn-warning">Login</a>
-            
-            <a href="{% url 'cart' %}">
-               <img  id="cart-icon" src="{% static 'images/cart.png' %}">
-           </a>
-           <p id="cart-total">{{cartItems}}</p>
+     .navop{
+       background-color: #009688;
+       opacity: 0.9;
+     }
+     
+     .extrasec{
+       padding: 60px 0 0 0 ;
+       text-align: center;
+     }
+
+
+     
+#test{
+    width: 100%;
+    padding: 70px 0;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    transform:rotate(5deg);
+}
+.test-row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+
+}
+.test-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #009688;
+    cursor: pointer;
+    transition: transform .5s;
+    background-color: #009688;
+    transform:rotate(-5deg);
+}
+.test-col p{
+    font-size: 15px;
    
-        </div>
-        </div>
-      </nav>
+}
+.user{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.user img{
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+.user-info{
+    margin-left: 10px;
+    color: #27c0ff;
+    font-size: 20px;
+}
+.test-col:hover{
+    transform: translateY(7px);
+}
+@media screen and (max-width:770px){
 
-    <div class="container">
+    .test-col{
+        flex-basis: 100%;
+    }
+}
+
+
+.title-text{
+     text-align: center;
+     padding-bottom: 70px;
+     transform:rotate(-5deg);
+}
+.title-text p{
+    margin: auto;
+    font-size: 20px;
+    color: #009688;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+.title-text p::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#019587,#fff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+.add{
+  padding-top: 70px;
+  background-color: #fff;
+  height: 900px;
+  transform:rotate(-4deg);
+}
+.add img{
+  height: 700px;
+  width: 100%;
+  transform:rotate(4deg);
+}
+/* ....................................... */
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 20px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  transform:rotate(4deg);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  transform:rotate(4deg);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+  transform:rotate(4deg);
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0s;
+  animation-name: fade;
+  animation-duration: 5.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+/* .................................... */
+
+
+
+
+</style>
+
+  
+
+
+</head>
+<body id="third">
+
+  <nav class="navbar navbar-expand-lg navop "  style=" z-index: 1;position: fixed;width: 100%; ">
+    <img src="{% static 'images/logo.png' %}" alt="logo" style="height: 40px;width: 40px;margin-right:  10px;">
+    <a class="navbar-brand" href="{% url 'store' %}" style="color: white;">Anchal Fashions</a>
+   </img>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="{% url 'store' %}" style="color: white;background: none;">Store </a>
+          
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#contacthyper" style="color: white;">Contact </a>
+          
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#testhyper" style="color: white;">Testimonial </a>
+          
+        </li>
+      </ul>
+
+
+
+    <div class="navbar-nav ml-auto " >
+      <a href=""class="btn btn-warning">Logout..</a>
+        
+        <a href="{% url 'cart' %}">
+           <img  id="cart-icon" src="{% static 'images/cart.png' %}">
+       </a>
+       <p id="cart-total">{{cartItems}}</p>
+
+    </div>
+    </div>
+    </nav>
+
+
+ 
+  
+
+
+    
+     
+      <div class="add" style="margin-left: -500px;background-color:whitesmoke;">
+        <!-- <h1>Helooo</h1> -->
+        <!-- <img src="{% static 'images/laptop.jpg' %}" alt=""> -->
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="{% static 'images/img1.jpg' %}" style="width:150%">
+            <div class="text">Caption Text</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="{% static 'images/img2.jpg' %}" style="width:150%">
+            <div class="text">Caption Two</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="{% static 'images/img3.jpg' %}" style="width:150%">
+            <div class="text">Caption Three</div>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center;margin-left: 450px;transform:rotate(4deg);">
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+          </div>
+
+          <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 4000); // Change image every 2 seconds
+            }
+            </script>
+      </div>
+      
+
+      
+      
+
+
+            
+
+    <div class="container" style="padding-top: 60px;">
             <br>
             {% block content %}
+
+            
 
 
             {% endblock content %}
@@ -103,6 +706,69 @@
 
 
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+     <!-- test -->
+
+
+
+     <section id="test">
+      <div class="title-text">
+          <p id="testhyper">TESTIMONIAL</p>
+          <h1 style="color: black;">What Clint Says</h1>
+      </div> 
+      <div class="test-row">
+          <div class="test-col">
+              <div class="user">
+                 
+                  <div class="user-info">
+                      <h4>KEN NORMAL  <i class="fa fa-twitter" ></i></h4>
+                      <small>@kenyou</small>
+                  </div>
+              </div>
+              <p>Hypertext Markup Language (HTML) is the standard 
+              markup language for documents designed to be displayed 
+              in a web browser. 
+              </p>
+          </div>
+          <div class="test-col">
+              <div class="user">
+                  
+                  <div class="user-info">
+                      <h4>AKASH SAHU  <i class="fa fa-twitter" ></i></h4>
+                      <small>@kskyyou</small>
+                  </div>
+              </div>
+              <p>Hypertext Markup Language (HTML) is the standard 
+                  markup language for documents designed to be displayed 
+                  in a web browser. 
+              </p>
+          </div>
+          <div class="test-col">
+              <div class="user">
+                
+                  <div class="user-info">
+                      <h4>ANUPAM SAHU  <i class="fa fa-twitter" ></i></h4>
+                      <small>@anupsara</small>
+                  </div>
+              </div>
+              <p>Hypertext Markup Language (HTML) is the standard 
+                  markup language for documents designed to be displayed 
+                  in a web browser. 
+              </p>
+          </div>
+      </div>
+
+
+      
+  </section>
+  <!-- test end....................................................................... -->
+
+    <div class="sahu">
 
     <!--Important link source from https://bootsnipp.com/snippets/ooa9M-->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -116,9 +782,7 @@
               <div class="row">
                   <div class="col-md-12 col-lg-4">
                       <div class="dk-footer-box-info">
-                          <a href="index.html" class="footer-logo">
-                              <img src="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784_960_720.png" alt="footer_logo" class="img-fluid">
-                          </a>
+                      
                           <p class="footer-info-text">
                               Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
                           </p>
@@ -155,10 +819,7 @@
                           <!-- End Social link -->
                       </div>
                       <!-- End Footer info -->
-                      <div class="footer-awarad">
-                          <img src="images/icon/best.png" alt="">
-                          <p>Best Design Company 2019</p>
-                      </div>
+                    
                   </div>
                   <!-- End Col -->
                   <div class="col-md-12 col-lg-8">
@@ -170,8 +831,10 @@
                                   </div>
                                   <!-- End contact Icon -->
                                   <div class="contact-info">
-                                      <h3>Jaipur India</h3>
-                                      <p>5353 Road Avenue</p>
+                                      <h3>Sawai Madhopur</h3>
+                                      <h3>Rajasthan</h3>
+                                      <p>Tyagi Nagar,Todra Phalodi Quarry</p>
+                                      <p>pin - 322026</p>
                                   </div>
                                   <!-- End Contact Info -->
                               </div>
@@ -184,10 +847,12 @@
                                       <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
                                   </div>
                                   <!-- End contact Icon -->
+                                  <div id="contacthyper">
                                   <div class="contact-info">
-                                      <h3>95 711 9 5353</h3>
+                                      <h3>+918058900995</h3>
                                       <p>Give us a call</p>
                                   </div>
+                                </div>
                                   <!-- End Contact Info -->
                               </div>
                               <!-- End Contact Us -->
@@ -209,26 +874,17 @@
                                       <li>
                                           <a href="#">Services</a>
                                       </li>
-                                      <li>
-                                          <a href="#">Projects</a>
-                                      </li>
-                                      <li>
-                                          <a href="#">Our Team</a>
-                                      </li>
+                      
                                   </ul>
                                   <ul>
                                       <li>
-                                          <a href="#">Contact us</a>
-                                      </li>
-                                      <li>
-                                          <a href="#">Blog</a>
-                                      </li>
-                                      <li>
                                           <a href="#">Testimonials</a>
                                       </li>
+
                                       <li>
-                                          <a href="#">Faq</a>
-                                      </li>
+                                        <a href="#">Testimonials</a>
+                                    </li>
+                                    
                                   </ul>
                               </div>
                               <!-- End Footer Widget -->
@@ -269,29 +925,12 @@
 
           <div class="copyright">
               <div class="container">
-                  <div class="row">
+                  <div class="row d-flex justify-content-center">
                       <div class="col-md-6">
-                          <span>Copyright © 2019, All Right Reserved Seobin</span>
+                          <span>Anchal Fashions © 2021, All Right Reserved Seobin</span>
                       </div>
                       <!-- End Col -->
-                      <div class="col-md-6">
-                          <div class="copyright-menu">
-                              <ul>
-                                  <li>
-                                      <a href="#">Home</a>
-                                  </li>
-                                  <li>
-                                      <a href="#">Terms</a>
-                                  </li>
-                                  <li>
-                                      <a href="#">Privacy Policy</a>
-                                  </li>
-                                  <li>
-                                      <a href="#">Contact</a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
+                     
                       <!-- End col -->
                   </div>
                   <!-- End Row -->
@@ -309,15 +948,20 @@
     </footer>
 
 
+  </div>
+
 
 
 
 
 
       <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>
-        <script src="http://cdn.webrupee.com/js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>
+    <script src="http://cdn.webrupee.com/js" type="text/javascript"></script>
+    
+ 
+  
       
     </body>
     </html>

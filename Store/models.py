@@ -2,6 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class addver(models.Model):
+    imageadd = models.ImageField(null=True,blank=True)
+
+
 class Customer(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE, null=True , blank=True)
     name = models.CharField(max_length=200, null=True)
@@ -16,6 +20,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False,null = True,blank = True)
     image = models.ImageField(null=True,blank=True)
+    
 
     def __str__(self):
         return self.name
