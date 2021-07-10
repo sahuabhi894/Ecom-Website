@@ -18,7 +18,7 @@ class Customer(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    digital = models.BooleanField(default=False,null = True,blank = True)
+    digital = models.NullBooleanField(default=False,null = True,blank = True)
     image = models.ImageField(null=True,blank=True)
     
 
@@ -38,7 +38,7 @@ class Product(models.Model):
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL,blank=True,null=True)
     date_orderd= models.DateTimeField(auto_now_add=True)
-    complete= models.BooleanField(default=False,null = True,blank = True)
+    complete= models.NullBooleanField(default=False,null = True,blank = True)
     transaction_id = models.CharField(max_length=200, null=True)
 
     def __str__(self):
