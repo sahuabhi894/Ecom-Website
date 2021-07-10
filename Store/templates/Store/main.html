@@ -65,6 +65,58 @@
 
 
 <style type="text/css">
+/* grid..................................................................................................... */
+.p-card {
+    border: 1px solid #eee
+}
+
+.p-details {
+    padding: 10px;
+    border-radius: 0px;
+    background: #000;
+    color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px
+}
+
+body {
+    background: #eee
+}
+
+.spec span {
+    font-size: 13px
+}
+
+.spec h6 {
+    font-size: 16px;
+    font-weight: 500
+}
+
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease
+}
+
+.line {
+    background-color: #fff;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    height: 0.2px
+}
+/* grid khtm......................................................................... */
 
 body { color: green }
 .footer-widget p {
@@ -408,7 +460,7 @@ p{
     padding: 70px 0;
     background-color: whitesmoke;
     opacity: 0.9;
-    transform:rotate(5deg);
+    
 }
 .test-row{
     width: 80%;
@@ -429,7 +481,7 @@ p{
     cursor: pointer;
     transition: transform .5s;
     background-color: #009688;
-    transform:rotate(-5deg);
+    
 }
 .test-col p{
     font-size: 15px;
@@ -464,7 +516,7 @@ p{
 .title-text{
      text-align: center;
      padding-bottom: 70px;
-     transform:rotate(-5deg);
+     
 }
 .title-text p{
     margin: auto;
@@ -487,91 +539,6 @@ p{
 
 }
 
-.add{
-  padding-top: 70px;
-  background-color: #fff;
-  height: 900px;
-  transform:rotate(-4deg);
-}
-.add img{
-  height: 700px;
-  width: 100%;
-  transform:rotate(4deg);
-}
-/* ....................................... */
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 20px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  transform:rotate(4deg);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-  transform:rotate(4deg);
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.5s ease;
-  transform:rotate(4deg);
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 0s;
-  animation-name: fade;
-  animation-duration: 5.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-/* .................................... */
 
 
 
@@ -583,11 +550,11 @@ img {vertical-align: middle;}
 
 </head>
 <body id="third">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #019587;">
     <img src="{% static 'images/logo.png' %}" alt="logo" style="height: 40px;width: 40px;margin-right:  10px;">
     <a class="navbar-brand" href="{% url 'store' %}" style="color: #000">Anchal Fashions</a>
    </img>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -599,10 +566,8 @@ img {vertical-align: middle;}
           <a class="nav-link" href="#contacthyper" style="color: #000;">Contact </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#testhyper" style="color: #000;">Testimonial </a>
-        </li>
-       
-       
+          <a class="nav-link" href="#testhyper" style="color: #000;">About Us</a>
+        </li> 
       </ul>
       <div class="navbar-nav  ml-auto" >  
         <a href="{% url 'cart' %}">
@@ -658,7 +623,32 @@ img {vertical-align: middle;}
  
   
 
-
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="{% static 'images/img1.jpg' %}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'images/img2.jpg' %}" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'images/img3.jpg' %}" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
     
      
       <!-- <div class="add" style="margin-left: -500px;background-color:whitesmoke;">
@@ -689,7 +679,7 @@ img {vertical-align: middle;}
           </div>
           <br>
           
-          <div style="text-align:center;margin-left: 450px;transform:rotate(4deg);">
+          <div style="text-align:center;margin-left: 450px;">
             <span class="dot" ></span> 
             <span class="dot" ></span> 
             <span class="dot" ></span> 
@@ -811,12 +801,10 @@ img {vertical-align: middle;}
     <footer id="dk-footer" class="dk-footer">
           <div class="container">
               <div class="row">
-                  <div class="col-md-12 col-lg-4">
+                  <!-- <div class="col-md-12 col-lg-4">
                       <div class="dk-footer-box-info">
                       
-                          <p class="footer-info-text">
-                              Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
-                          </p>
+                          
                           <div class="footer-social-link">
                               <h3>Follow us</h3>
                               <ul>
@@ -847,15 +835,15 @@ img {vertical-align: middle;}
                                   </li>
                               </ul>
                           </div>
-                          <!-- End Social link -->
+                     
                       </div>
-                      <!-- End Footer info -->
+                     
                     
-                  </div>
+                  </div> -->
                   <!-- End Col -->
-                  <div class="col-md-12 col-lg-8">
-                      <div class="row">
-                          <div class="col-md-6">
+                  <div class="col-md-12 col-lg-12  ">
+                      <div class="row ">
+                          <div class="col-md-6 " >
                               <div class="contact-us">
                                   <div class="contact-icon">
                                       <i class="fa fa-map-o" aria-hidden="true"></i>
@@ -873,7 +861,7 @@ img {vertical-align: middle;}
                           </div>
                           <!-- End Col -->
                           <div class="col-md-6">
-                              <div class="contact-us contact-us-last">
+                              <div class="contact-us ">
                                   <div class="contact-icon">
                                       <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
                                   </div>
@@ -881,6 +869,7 @@ img {vertical-align: middle;}
                                   <div id="contacthyper">
                                   <div class="contact-info">
                                       <h3>+918058900995</h3>
+                                      <h3>+919929234273</h3>
                                       <p>Give us a call</p>
                                   </div>
                                 </div>
@@ -892,43 +881,11 @@ img {vertical-align: middle;}
                       </div>
                       <!-- End Contact Row -->
                       <div class="row">
-                          <div class="col-md-12 col-lg-6">
-                              <div class="footer-widget footer-left-widget">
-                                  <div class="section-heading">
-                                      <h3>Useful Links</h3>
-                                      <span class="animate-border border-black"></span>
-                                  </div>
-                                  <ul>
-                                      <li>
-                                          <a href="#">About us</a>
-                                      </li>
-                                      <li>
-                                          <a href="#">Services</a>
-                                      </li>
-                      
-                                  </ul>
-                                  <ul>
-                                      <li>
-                                          <a href="#">Testimonials</a>
-                                      </li>
-
-                                      <li>
-                                        <a href="#">Testimonials</a>
-                                    </li>
-                                    
-                                  </ul>
-                              </div>
-                              <!-- End Footer Widget -->
-                          </div>
+                          
                           <!-- End col -->
-                          <div class="col-md-12 col-lg-6">
-                              <div class="footer-widget">
-                                  <div class="section-heading">
-                                      <h3>Subscribe</h3>
-                                      <span class="animate-border border-black"></span>
-                                  </div>
-                                  <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                  Reference site about Lorem Ipsum, giving information on its origins, as well.</p>
+                          <div class="col-md-12 col-lg-12">
+                              <div class="footer-widget ">
+                          
                                   <form action="#">
                                       <div class="form-row">
                                           <div class="col dk-footer-form">
@@ -958,7 +915,7 @@ img {vertical-align: middle;}
               <div class="container">
                   <div class="row d-flex justify-content-center">
                       <div class="col-md-6">
-                          <span>Anchal Fashions © 2021, All Right Reserved Seobin</span>
+                          <span>Anchal Fashions © 2021, All Right Reserved </span>
                       </div>
                       <!-- End Col -->
                      
@@ -990,6 +947,9 @@ img {vertical-align: middle;}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>
     <script src="http://cdn.webrupee.com/js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     
  
   
